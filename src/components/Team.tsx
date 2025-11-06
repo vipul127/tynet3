@@ -1,8 +1,4 @@
 import { Linkedin, Mail } from "lucide-react";
-import redLego from "@/assets/red.png";
-import greenLego from "@/assets/green.png";
-import brownLego from "@/assets/brown.png";
-import whiteLego from "@/assets/white.png";
 import FacultySection from "./FacultySection";
 import { motion } from "framer-motion";
 
@@ -12,106 +8,110 @@ const Team = () => {
       name: "Sarah Johnson",
       role: "Event Lead",
       image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah",
+      accentColor: "accent",
     },
     {
       name: "Emily Chen",
       role: "Tech Lead",
       image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Emily",
+      accentColor: "primary",
     },
     {
       name: "Priya Sharma",
       role: "Marketing Lead",
       image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Priya",
+      accentColor: "accent",
     },
     {
       name: "Maria Garcia",
       role: "Operations Lead",
       image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Maria",
+      accentColor: "primary",
     },
     {
       name: "Jessica Lee",
       role: "Sponsorship Lead",
       image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Jessica",
+      accentColor: "accent",
     },
     {
       name: "Aisha Rahman",
       role: "Design Lead",
       image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Aisha",
+      accentColor: "primary",
     },
   ];
 
   return (
-    <section id="team" className="py-20 bg-background relative overflow-hidden">
-      {/* LEGO blocks scattered around */}
-      <img 
-        src={greenLego} 
-        alt="LEGO brick" 
-        className="absolute top-10 left-0 w-64 h-64 lego-shadow rotate-12 hidden lg:block opacity-20" 
-      />
-      <img 
-        src={redLego} 
-        alt="LEGO brick" 
-        className="absolute top-40 right-0 w-56 h-56 lego-shadow -rotate-45 hidden xl:block opacity-15" 
-      />
-      <img 
-        src={whiteLego} 
-        alt="LEGO brick" 
-        className="absolute bottom-20 left-5 w-60 h-60 lego-shadow rotate-45 hidden lg:block opacity-25" 
-      />
-      <img 
-        src={brownLego} 
-        alt="LEGO brick" 
-        className="absolute bottom-40 right-10 w-52 h-52 lego-shadow -rotate-12 hidden xl:block opacity-20" 
-      />
-
+    <section id="team" className="py-32 bg-accent relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Faculty Section */}
         <FacultySection />
 
-        <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
-            Meet the <span className="text-primary">W-ACM Cores</span>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-20"
+        >
+          <h2 className="text-5xl md:text-6xl font-bold mb-4">
+            W-ACM <span className="text-primary">Core Team</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            The passionate women from ACM Women (W-ACM) organizing TYNET 3.0
-          </p>
-        </div>
+          <p className="text-lg text-muted-foreground">Building TYNET 3.0 brick by brick</p>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Horizontal LEGO Box Style Cards */}
+        <div className="space-y-6">
           {coreTeam.map((member, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative group bg-white rounded-[2.5rem] border-4 border-primary/30 shadow-xl p-8 flex flex-col items-center cartoon-frame overflow-hidden hover:scale-105 hover:shadow-2xl transition-transform"
-              style={{ boxShadow: '0 8px 32px 0 rgba(0,0,0,0.10)' }}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="group"
             >
-              {/* Cartoon burst background */}
-              <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-24 h-24 bg-yellow-300 rounded-full border-4 border-white cartoon-burst z-0" />
-              {/* LEGO stud accent */}
-              <img src={redLego} alt="lego stud" className="absolute -top-6 -left-6 w-12 h-12 opacity-40 rotate-12" />
-              <img src={greenLego} alt="lego stud" className="absolute -bottom-6 -right-6 w-12 h-12 opacity-40 -rotate-12" />
-              {/* Photo */}
-              <img
-                src={member.image}
-                alt={member.name}
-                className="relative z-10 w-32 h-32 object-cover rounded-2xl border-4 border-yellow-300 cartoon-img bg-white"
-              />
-              {/* Role badge */}
-              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-accent text-accent-foreground px-4 py-1 rounded-full text-sm font-bold shadow cartoon-badge z-10 border-2 border-white">
-                {member.role}
-              </div>
-              {/* Name and links */}
-              <div className="text-center mt-12 z-10">
-                <h3 className="text-xl font-extrabold mb-2" style={{ fontFamily: 'Fredoka, Arial, sans-serif' }}>{member.name}</h3>
-                <div className="flex justify-center gap-3 mt-4">
-                  <button className="w-10 h-10 bg-primary/10 hover:bg-primary rounded-lg flex items-center justify-center transition-colors group-hover:scale-110">
-                    <Linkedin className="w-5 h-5 text-primary group-hover:text-primary-foreground" />
-                  </button>
-                  <button className="w-10 h-10 bg-primary/10 hover:bg-primary rounded-lg flex items-center justify-center transition-colors group-hover:scale-110">
-                    <Mail className="w-5 h-5 text-primary group-hover:text-primary-foreground" />
-                  </button>
+              <div className={`bg-background rounded-3xl p-6 lego-shadow hover:scale-[1.02] transition-all flex items-center gap-6 ${
+                index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
+              }`}>
+                {/* Profile Image with LEGO Border */}
+                <div className="relative flex-shrink-0">
+                  {/* LEGO Studs decoration */}
+                  <div className={`absolute -top-3 ${index % 2 === 0 ? '-left-3' : '-right-3'} grid grid-cols-2 gap-1`}>
+                    <div className={`w-4 h-4 rounded-full bg-${member.accentColor}`} />
+                    <div className={`w-4 h-4 rounded-full bg-${member.accentColor}`} />
+                    <div className={`w-4 h-4 rounded-full bg-${member.accentColor}`} />
+                    <div className={`w-4 h-4 rounded-full bg-${member.accentColor}`} />
+                  </div>
+                  
+                  <div className={`w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden border-4 border-${member.accentColor} lego-shadow`}>
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className={`flex-1 ${index % 2 === 0 ? 'text-left' : 'text-right'}`}>
+                  <div className={`inline-block bg-${member.accentColor}/10 px-4 py-1 rounded-full mb-3`}>
+                    <span className={`text-sm font-bold text-${member.accentColor === 'accent' ? 'accent' : 'primary'}`}>
+                      {member.role}
+                    </span>
+                  </div>
+                  <h3 className="text-3xl font-extrabold mb-2" style={{ fontFamily: 'Fredoka, Arial, sans-serif' }}>
+                    {member.name}
+                  </h3>
+                  
+                  {/* Social Links */}
+                  <div className={`flex gap-3 mt-4 ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
+                    <button className={`w-11 h-11 bg-${member.accentColor}/10 hover:bg-${member.accentColor} rounded-xl flex items-center justify-center transition-all hover:scale-110 group`}>
+                      <Linkedin className={`w-5 h-5 text-${member.accentColor === 'accent' ? 'accent' : 'primary'} group-hover:text-background`} />
+                    </button>
+                    <button className={`w-11 h-11 bg-${member.accentColor}/10 hover:bg-${member.accentColor} rounded-xl flex items-center justify-center transition-all hover:scale-110 group`}>
+                      <Mail className={`w-5 h-5 text-${member.accentColor === 'accent' ? 'accent' : 'primary'} group-hover:text-background`} />
+                    </button>
+                  </div>
                 </div>
               </div>
             </motion.div>

@@ -1,136 +1,128 @@
-import { Trophy, Award, Medal, Gift } from "lucide-react";
-import redLego from "@/assets/red.png";
-import greenLego from "@/assets/green.png";
-import brownLego from "@/assets/brown.png";
-import whiteLego from "@/assets/white.png";
+import { Trophy, Award, Medal, Sparkles } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Prizes = () => {
-  const prizes = [
-    {
-      place: "1st Place",
-      icon: Trophy,
-      amount: "$5,000",
-      color: "bg-accent",
-      benefits: ["Cash Prize", "Mentorship Program", "Job Interview Fast-track", "LEGO Prize Pack"]
-    },
-    {
-      place: "2nd Place",
-      icon: Award,
-      amount: "$3,000",
-      color: "bg-primary",
-      benefits: ["Cash Prize", "Tech Swag Bundle", "Online Course Access", "LinkedIn Feature"]
-    },
-    {
-      place: "3rd Place",
-      icon: Medal,
-      amount: "$2,000",
-      color: "bg-foreground",
-      benefits: ["Cash Prize", "Tech Gadgets", "Workshop Access", "Certificate of Achievement"]
-    },
-  ];
-
-  const specialPrizes = [
-    { title: "Best UI/UX Design", prize: "$500" },
-    { title: "Most Innovative Idea", prize: "$500" },
-    { title: "Best Social Impact", prize: "$500" },
-    { title: "People's Choice", prize: "$500" },
-  ];
-
   return (
-    <section id="prizes" className="py-20 bg-primary brick-pattern relative overflow-hidden">
+    <section id="prizes" className="py-32 bg-background relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
-            TYNET 3.0 Prize <span className="text-accent">Pool</span>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-20"
+        >
+          <h2 className="text-5xl md:text-6xl font-bold mb-4">
+            Prize <span className="text-accent">Pool</span>
           </h2>
-          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
-            Over $10,000 in prizes and opportunities for this year's winners
-          </p>
-        </div>
+          <p className="text-xl text-muted-foreground">Over ₹15,00,000 in total prizes</p>
+        </motion.div>
 
-        {/* Main Prizes */}
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
-          {prizes.map((prize, index) => {
-            const Icon = prize.icon;
-            return (
-              <div 
-                key={index}
-                className="bg-background rounded-3xl p-8 lego-shadow hover:translate-y-1 hover:shadow-none transition-all"
-              >
-                <div className={`w-20 h-20 ${prize.color} rounded-2xl flex items-center justify-center mx-auto mb-6 lego-shadow-sm`}>
-                  <Icon className={`w-10 h-10 ${prize.color === 'bg-foreground' ? 'text-background' : 'text-background'}`} />
-                </div>
-                
-                <h3 className="text-2xl font-bold text-center mb-2">{prize.place}</h3>
-                <div className="text-4xl font-bold text-center text-primary mb-6">{prize.amount}</div>
-                
-                <div className="space-y-3">
-                  {prize.benefits.map((benefit, idx) => (
-                    <div key={idx} className="flex items-center gap-2 text-sm">
-                      <div className="w-2 h-2 bg-accent rounded-full" />
-                      <span className="text-muted-foreground">{benefit}</span>
-                    </div>
-                  ))}
-                </div>
+        {/* LEGO Podium Style */}
+        <div className="flex items-end justify-center gap-8 mb-20">
+          {/* 2nd Place */}
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="flex flex-col items-center"
+          >
+            <div className="relative mb-6">
+              <div className="w-20 h-20 bg-muted rounded-2xl flex items-center justify-center lego-shadow mb-2">
+                <Award className="w-10 h-10 text-foreground" />
               </div>
-            );
-          })}
+              <div className="absolute -top-2 -right-2 w-8 h-8 bg-accent rounded-full flex items-center justify-center text-xs font-bold">
+                2nd
+              </div>
+            </div>
+            {/* LEGO Stack */}
+            <div className="bg-primary/80 w-48 h-56 rounded-3xl lego-shadow flex flex-col items-center justify-center relative">
+              {/* Studs on top */}
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 flex gap-4">
+                <div className="w-6 h-6 bg-foreground/20 rounded-full" />
+                <div className="w-6 h-6 bg-foreground/20 rounded-full" />
+              </div>
+              <p className="text-5xl font-bold text-background mb-2">₹3L</p>
+              <p className="text-background/80 font-semibold">+ Perks</p>
+            </div>
+          </motion.div>
+
+          {/* 1st Place - Taller */}
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col items-center"
+          >
+            <div className="relative mb-6">
+              <div className="w-24 h-24 bg-accent rounded-2xl flex items-center justify-center lego-shadow mb-2">
+                <Trophy className="w-12 h-12 text-background" />
+              </div>
+              <div className="absolute -top-3 -right-3 w-10 h-10 bg-accent rounded-full flex items-center justify-center text-sm font-bold border-4 border-background">
+                1st
+              </div>
+            </div>
+            {/* Taller LEGO Stack */}
+            <div className="bg-accent w-56 h-72 rounded-3xl lego-shadow flex flex-col items-center justify-center relative">
+              {/* Studs on top */}
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 flex gap-4">
+                <div className="w-7 h-7 bg-background/20 rounded-full" />
+                <div className="w-7 h-7 bg-background/20 rounded-full" />
+              </div>
+              <Sparkles className="w-8 h-8 text-background/60 mb-2" />
+              <p className="text-6xl font-bold text-background mb-2">₹5L</p>
+              <p className="text-background/80 font-semibold">+ Premium Perks</p>
+            </div>
+          </motion.div>
+
+          {/* 3rd Place */}
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex flex-col items-center"
+          >
+            <div className="relative mb-6">
+              <div className="w-20 h-20 bg-muted rounded-2xl flex items-center justify-center lego-shadow mb-2">
+                <Medal className="w-10 h-10 text-foreground" />
+              </div>
+              <div className="absolute -top-2 -right-2 w-8 h-8 bg-accent rounded-full flex items-center justify-center text-xs font-bold">
+                3rd
+              </div>
+            </div>
+            {/* LEGO Stack */}
+            <div className="bg-primary/60 w-48 h-48 rounded-3xl lego-shadow flex flex-col items-center justify-center relative">
+              {/* Studs on top */}
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 flex gap-4">
+                <div className="w-6 h-6 bg-foreground/20 rounded-full" />
+                <div className="w-6 h-6 bg-foreground/20 rounded-full" />
+              </div>
+              <p className="text-5xl font-bold text-background mb-2">₹2L</p>
+              <p className="text-background/80 font-semibold">+ Perks</p>
+            </div>
+          </motion.div>
         </div>
 
-        {/* Special Category Prizes */}
-        <div className="bg-background rounded-3xl p-8 lego-shadow">
-          <div className="flex items-center justify-center gap-3 mb-8">
-            <Gift className="w-8 h-8 text-accent" />
-            <h3 className="text-3xl font-bold">Special Category Prizes</h3>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {specialPrizes.map((special, index) => (
-              <div 
-                key={index}
-                className="bg-muted rounded-xl p-6 text-center hover:bg-primary/20 transition-colors"
-              >
-                <div className="text-2xl font-bold text-accent mb-2">{special.prize}</div>
-                <div className="text-sm font-semibold text-foreground">{special.title}</div>
+        {/* Special Categories - Minimalist Pills */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center"
+        >
+          <p className="text-sm font-semibold text-muted-foreground mb-6 uppercase tracking-wider">Special Categories</p>
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
+            {["Best Design", "Most Innovative", "Social Impact", "People's Choice"].map((category, i) => (
+              <div key={i} className="bg-accent/10 border-2 border-accent/30 rounded-full px-6 py-3 font-semibold hover:bg-accent/20 transition-colors">
+                {category} <span className="text-accent ml-2">₹50K</span>
               </div>
             ))}
           </div>
-        </div>
-
-        {/* All Participants Benefits */}
-        <div className="mt-12 bg-accent/10 border-4 border-accent/30 rounded-3xl p-8 text-center">
-          <h3 className="text-2xl font-bold mb-4">All Participants Receive</h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            <span className="bg-background px-6 py-3 rounded-xl font-semibold lego-shadow-sm">Certificate of Participation</span>
-            <span className="bg-background px-6 py-3 rounded-xl font-semibold lego-shadow-sm">Exclusive TYNET Swag</span>
-            <span className="bg-background px-6 py-3 rounded-xl font-semibold lego-shadow-sm">Networking Opportunities</span>
-            <span className="bg-background px-6 py-3 rounded-xl font-semibold lego-shadow-sm">Workshop Access</span>
+          
+          <div className="inline-block bg-muted/50 rounded-2xl px-8 py-4 text-sm text-muted-foreground">
+            All participants get certificates, swag & networking opportunities
           </div>
-        </div>
+        </motion.div>
       </div>
-
-      {/* Decorative Elements */}
-      <img 
-        src={redLego} 
-        alt="LEGO brick" 
-        className="absolute top-20 right-5 w-48 h-48 rotate-12 animate-pulse hidden lg:block" 
-      />
-      <img 
-        src={greenLego} 
-        alt="LEGO brick" 
-        className="absolute bottom-20 left-5 w-60 h-60 -rotate-12 animate-pulse hidden lg:block" 
-      />
-      <img 
-        src={brownLego} 
-        alt="LEGO brick" 
-        className="absolute top-1/3 left-10 w-52 h-52 rotate-45 animate-pulse hidden xl:block opacity-60" 
-      />
-      <img 
-        src={whiteLego} 
-        alt="LEGO brick" 
-        className="absolute bottom-1/3 right-10 w-56 h-56 -rotate-45 animate-pulse hidden xl:block opacity-60" 
-      />
-      
     </section>
   );
 };
