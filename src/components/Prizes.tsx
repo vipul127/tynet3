@@ -1,4 +1,8 @@
 import { Trophy, Award, Medal, Gift } from "lucide-react";
+import redLego from "@/assets/red.png";
+import greenLego from "@/assets/green.png";
+import brownLego from "@/assets/brown.png";
+import whiteLego from "@/assets/white.png";
 
 const Prizes = () => {
   const prizes = [
@@ -106,8 +110,27 @@ const Prizes = () => {
       </div>
 
       {/* Decorative Elements */}
-      <div className="absolute top-20 right-10 w-16 h-16 bg-accent rounded-xl lego-shadow rotate-12 animate-pulse hidden lg:block" />
-      <div className="absolute bottom-20 left-10 w-20 h-20 bg-background rounded-xl lego-shadow -rotate-12 animate-pulse hidden lg:block" />
+      <img 
+        src={redLego} 
+        alt="LEGO brick" 
+        className="absolute top-20 right-5 w-48 h-48 rotate-12 animate-pulse hidden lg:block" 
+      />
+      <img 
+        src={greenLego} 
+        alt="LEGO brick" 
+        className="absolute bottom-20 left-5 w-60 h-60 -rotate-12 animate-pulse hidden lg:block" 
+      />
+      <img 
+        src={brownLego} 
+        alt="LEGO brick" 
+        className="absolute top-1/3 left-10 w-52 h-52 rotate-45 animate-pulse hidden xl:block opacity-60" 
+      />
+      <img 
+        src={whiteLego} 
+        alt="LEGO brick" 
+        className="absolute bottom-1/3 right-10 w-56 h-56 -rotate-45 animate-pulse hidden xl:block opacity-60" 
+      />
+      
     </section>
   );
 };

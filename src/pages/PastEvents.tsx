@@ -4,6 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, Award, Calendar, MapPin, Users, Trophy, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
+import redLego from "@/assets/red.png";
+import greenLego from "@/assets/green.png";
+import brownLego from "@/assets/brown.png";
+import whiteLego from "@/assets/white.png";
 
 const PastEvents = () => {
   return (
@@ -11,8 +15,20 @@ const PastEvents = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative bg-primary brick-pattern py-20 px-6">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative bg-primary brick-pattern py-20 px-6 overflow-hidden">
+        {/* LEGO blocks */}
+        <img 
+          src={redLego} 
+          alt="LEGO brick" 
+          className="absolute top-5 right-0 w-64 h-64 lego-shadow rotate-12 hidden lg:block opacity-30" 
+        />
+        <img 
+          src={greenLego} 
+          alt="LEGO brick" 
+          className="absolute bottom-5 left-0 w-56 h-56 lego-shadow -rotate-45 hidden xl:block opacity-25" 
+        />
+        
+        <div className="max-w-7xl mx-auto relative z-10">
           <Link to="/">
             <Button variant="outline" className="mb-6 bg-background">
               <ArrowLeft className="mr-2 h-4 w-4" />
@@ -30,8 +46,25 @@ const PastEvents = () => {
       </section>
 
       {/* Tynet 1.0 Section */}
-      <section className="py-16 px-6 bg-background">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-16 px-6 bg-background relative overflow-hidden">
+        {/* LEGO blocks */}
+        <img 
+          src={brownLego} 
+          alt="LEGO brick" 
+          className="absolute top-10 left-0 w-60 h-60 lego-shadow rotate-45 hidden lg:block opacity-15" 
+        />
+        <img 
+          src={whiteLego} 
+          alt="LEGO brick" 
+          className="absolute bottom-20 right-0 w-64 h-64 lego-shadow -rotate-12 hidden xl:block opacity-20" 
+        />
+        <img 
+          src={redLego} 
+          alt="LEGO brick" 
+          className="absolute top-1/2 right-5 w-52 h-52 lego-shadow rotate-12 hidden lg:block opacity-15" 
+        />
+        
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="mb-12">
             <h2 className="text-4xl font-bold mb-4">TYNET 1.0</h2>
             <div className="flex flex-wrap gap-4 mb-6">
@@ -129,8 +162,25 @@ const PastEvents = () => {
       </section>
 
       {/* Tynet 2.0 Section */}
-      <section className="py-16 px-6 bg-muted/30">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-16 px-6 bg-muted/30 relative overflow-hidden">
+        {/* LEGO blocks */}
+        <img 
+          src={greenLego} 
+          alt="LEGO brick" 
+          className="absolute top-10 left-0 w-56 h-56 lego-shadow rotate-12 hidden lg:block opacity-20" 
+        />
+        <img 
+          src={brownLego} 
+          alt="LEGO brick" 
+          className="absolute bottom-20 right-0 w-60 h-60 lego-shadow -rotate-45 hidden xl:block opacity-15" 
+        />
+        <img 
+          src={whiteLego} 
+          alt="LEGO brick" 
+          className="absolute top-1/3 right-10 w-52 h-52 lego-shadow rotate-45 hidden lg:block opacity-20" 
+        />
+        
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="mb-12">
             <h2 className="text-4xl font-bold mb-4">TYNET 2.0</h2>
             <div className="flex flex-wrap gap-4 mb-6">

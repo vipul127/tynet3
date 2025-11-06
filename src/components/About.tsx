@@ -1,4 +1,8 @@
 import { Lightbulb, Code, Trophy } from "lucide-react";
+import redLego from "@/assets/red.png";
+import greenLego from "@/assets/green.png";
+import brownLego from "@/assets/brown.png";
+import whiteLego from "@/assets/white.png";
 
 const About = () => {
   const features = [
@@ -20,8 +24,35 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-background">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="about" className="py-20 bg-background relative overflow-hidden">
+      {/* LEGO blocks scattered around */}
+      <img 
+        src={redLego} 
+        alt="LEGO brick" 
+        className="absolute top-10 left-0 w-56 h-56 rotate-45 hidden lg:block opacity-20" 
+      />
+      <img 
+        src={greenLego} 
+        alt="LEGO brick" 
+        className="absolute top-40 right-0 w-64 h-64 -rotate-12 hidden xl:block opacity-15" 
+      />
+      <img 
+        src={brownLego} 
+        alt="LEGO brick" 
+        className="absolute bottom-20 left-10 w-48 h-48 rotate-12 hidden lg:block opacity-25" 
+      />
+      <img 
+        src={whiteLego} 
+        alt="LEGO brick" 
+        className="absolute bottom-40 right-5 w-52 h-52 -rotate-45 hidden xl:block opacity-20" 
+      />
+      <img 
+        src={redLego} 
+        alt="LEGO brick" 
+        className="absolute top-1/2 right-10 w-44 h-44 rotate-90 hidden lg:block opacity-15" 
+      />
+      
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
             About <span className="text-primary">TYNET 3.0</span>

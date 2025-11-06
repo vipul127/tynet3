@@ -1,6 +1,11 @@
 import React from "react";
 import { MacbookScroll } from "@/components/ui/macbook-scroll";
 import team3Image from "@/assets/team3.jpg";
+import redLego from "@/assets/red.png";
+import greenLego from "@/assets/green.png";
+import brownLego from "@/assets/brown.png";
+import whiteLego from "@/assets/white.png";
+import ACMWhite from "@/assets/ACMWhite.png";
 
 export function Laptop() {
   return (
@@ -13,13 +18,14 @@ export function Laptop() {
         }
         badge={
           <a href="#">
-            <Badge className="h-10 w-10 -rotate-12 transform" />
+            <img className="h-12" src={ACMWhite} alt="ACM Logo" />
           </a>
         }
         src={team3Image}
         showGradient={false}
       />
     </div>
+    
   );
 }
 // Peerlist logo
@@ -62,5 +68,7 @@ const Badge = ({ className }: { className?: string }) => {
         fill="#24292E"
       ></path>
     </svg>
+
+    
   );
 };

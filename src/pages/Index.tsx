@@ -11,6 +11,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight, Calendar, Trophy } from "lucide-react";
 import { Link } from "react-router-dom";
+import redLego from "@/assets/red.png";
+import greenLego from "@/assets/green.png";
+import brownLego from "@/assets/brown.png";
+import whiteLego from "@/assets/white.png";
 
 const Index = () => {
   return (
@@ -21,8 +25,25 @@ const Index = () => {
       <Laptop />
       
       {/* Past Events Teaser Section */}
-      <section className="py-16 px-6 bg-muted/30">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-16 px-6 bg-muted/30 relative overflow-hidden">
+        {/* LEGO blocks */}
+        <img 
+          src={brownLego} 
+          alt="LEGO brick" 
+          className="absolute top-5 left-0 w-56 h-56 lego-shadow rotate-12 hidden lg:block opacity-20" 
+        />
+        <img 
+          src={whiteLego} 
+          alt="LEGO brick" 
+          className="absolute bottom-5 right-0 w-64 h-64 lego-shadow -rotate-45 hidden xl:block opacity-15" 
+        />
+        <img 
+          src={redLego} 
+          alt="LEGO brick" 
+          className="absolute top-1/2 right-5 w-52 h-52 lego-shadow rotate-45 hidden lg:block opacity-20" 
+        />
+        
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">Our Legacy</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
