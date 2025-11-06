@@ -1,7 +1,7 @@
 import { Instagram, Linkedin, Mail, Twitter } from "lucide-react";
 import { Link } from "react-router-dom";
 import tynetLogo from "@/assets/tynetlogo.png";
-import clrfooter from "@/assets/clrfooter2.png";
+import clrfooter from "@/assets/clrfooter.png";
 
 const Footer = () => {
   return (
@@ -76,9 +76,9 @@ const Footer = () => {
           padding: 0,
         }}
       >
-        <div className="absolute top-8 left-8 md:top-16 md:left-16">
+        <div className="absolute -top-12 left-8 md:top-16 md:left-16">
           <h2 
-            className="text-black text-4xl md:text-6xl lg:text-7xl font-black leading-tight"
+            className="text-white text-4xl md:text-6xl lg:text-7xl font-black leading-tight"
             style={{ 
               fontFamily: "'Helvetica Neue', 'Arial', sans-serif",
               textTransform: 'uppercase',

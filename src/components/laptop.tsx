@@ -17,7 +17,7 @@ export function Laptop() {
           </span>
         }
         badge={
-          <a href="#">
+          <a href="rait-w.acm.org">
             <img className="h-12" src={ACMWhite} alt="ACM Logo" />
           </a>
         }

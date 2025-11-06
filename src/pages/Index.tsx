@@ -15,6 +15,7 @@ import redLego from "@/assets/red.png";
 import greenLego from "@/assets/green.png";
 import brownLego from "@/assets/brown.png";
 import whiteLego from "@/assets/white.png";
+import FacultySection from "@/components/FacultySection";
 
 const Index = () => {
   return (
@@ -30,17 +31,17 @@ const Index = () => {
         <img 
           src={brownLego} 
           alt="LEGO brick" 
-          className="absolute top-5 left-0 w-56 h-56 lego-shadow rotate-12 hidden lg:block opacity-20" 
+          className="absolute top-0 left-29 w-56 h-56 rotate-12 hidden lg:block opacity-20" 
         />
         <img 
           src={whiteLego} 
           alt="LEGO brick" 
-          className="absolute bottom-5 right-0 w-64 h-64 lego-shadow -rotate-45 hidden xl:block opacity-15" 
+          className="absolute bottom-5 right-0 w-64 h-64 -rotate-45 hidden xl:block opacity-15" 
         />
         <img 
           src={redLego} 
           alt="LEGO brick" 
-          className="absolute top-1/2 right-5 w-52 h-52 lego-shadow rotate-45 hidden lg:block opacity-20" 
+          className="absolute bottom-3 left-3 w-52 h-52 rotate-45 hidden lg:block opacity-20" 
         />
         
         <div className="max-w-7xl mx-auto relative z-10">

@@ -3,6 +3,8 @@ import redLego from "@/assets/red.png";
 import greenLego from "@/assets/green.png";
 import brownLego from "@/assets/brown.png";
 import whiteLego from "@/assets/white.png";
+import FacultySection from "./FacultySection";
+import { motion } from "framer-motion";
 
 const Team = () => {
   const coreTeam = [
@@ -61,8 +63,11 @@ const Team = () => {
         alt="LEGO brick" 
         className="absolute bottom-40 right-10 w-52 h-52 lego-shadow -rotate-12 hidden xl:block opacity-20" 
       />
-      
+
       <div className="max-w-7xl mx-auto px-6 relative z-10">
+        {/* Faculty Section */}
+        <FacultySection />
+
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
             Meet the <span className="text-primary">W-ACM Cores</span>
@@ -74,26 +79,32 @@ const Team = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {coreTeam.map((member, index) => (
-            <div 
+            <motion.div
               key={index}
-              className="bg-card border-4 border-primary/20 rounded-2xl p-6 lego-shadow hover:translate-y-1 hover:shadow-none transition-all group"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="relative group bg-white rounded-[2.5rem] border-4 border-primary/30 shadow-xl p-8 flex flex-col items-center cartoon-frame overflow-hidden hover:scale-105 hover:shadow-2xl transition-transform"
+              style={{ boxShadow: '0 8px 32px 0 rgba(0,0,0,0.10)' }}
             >
-              <div className="relative mb-6">
-                <div className="w-32 h-32 mx-auto bg-primary rounded-2xl overflow-hidden lego-shadow-sm">
-                  <img 
-                    src={member.image} 
-                    alt={member.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-accent text-accent-foreground px-4 py-1 rounded-full text-sm font-bold lego-shadow-sm">
-                  {member.role}
-                </div>
+              {/* Cartoon burst background */}
+              <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-24 h-24 bg-yellow-300 rounded-full border-4 border-white cartoon-burst z-0" />
+              {/* LEGO stud accent */}
+              <img src={redLego} alt="lego stud" className="absolute -top-6 -left-6 w-12 h-12 opacity-40 rotate-12" />
+              <img src={greenLego} alt="lego stud" className="absolute -bottom-6 -right-6 w-12 h-12 opacity-40 -rotate-12" />
+              {/* Photo */}
+              <img
+                src={member.image}
+                alt={member.name}
+                className="relative z-10 w-32 h-32 object-cover rounded-2xl border-4 border-yellow-300 cartoon-img bg-white"
+              />
+              {/* Role badge */}
+              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-accent text-accent-foreground px-4 py-1 rounded-full text-sm font-bold shadow cartoon-badge z-10 border-2 border-white">
+                {member.role}
               </div>
-              
-              <div className="text-center mt-8">
-                <h3 className="text-xl font-bold mb-2">{member.name}</h3>
-                
+              {/* Name and links */}
+              <div className="text-center mt-12 z-10">
+                <h3 className="text-xl font-extrabold mb-2" style={{ fontFamily: 'Fredoka, Arial, sans-serif' }}>{member.name}</h3>
                 <div className="flex justify-center gap-3 mt-4">
                   <button className="w-10 h-10 bg-primary/10 hover:bg-primary rounded-lg flex items-center justify-center transition-colors group-hover:scale-110">
                     <Linkedin className="w-5 h-5 text-primary group-hover:text-primary-foreground" />
@@ -103,7 +114,7 @@ const Team = () => {
                   </button>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
