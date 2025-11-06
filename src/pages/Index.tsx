@@ -6,6 +6,7 @@ import Team from "@/components/Team";
 import Prizes from "@/components/Prizes";
 import Footer from "@/components/Footer";
 import FloatingButton from "@/components/FloatingButton";
+import { Laptop } from "@/components/laptop";
 
 const Index = () => {
   return (
@@ -13,6 +14,7 @@ const Index = () => {
       <Navbar />
       <Hero />
       <About />
+      <Laptop />
       <EventDetails />
       <Team />
       <Prizes />
