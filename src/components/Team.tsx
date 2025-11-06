@@ -131,6 +131,7 @@ const Team = () => {
       </div>
     </section>
   );
+  {/* Team Section */}
 };
 
 export default Team;
