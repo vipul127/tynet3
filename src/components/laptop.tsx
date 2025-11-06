@@ -1,5 +1,6 @@
 import React from "react";
 import { MacbookScroll } from "@/components/ui/macbook-scroll";
+import team3Image from "@/assets/team3.jpg";
 
 export function Laptop() {
   return (
@@ -7,15 +8,15 @@ export function Laptop() {
       <MacbookScroll
         title={
           <span>
-            This Macbook is built with Tailwindcss. <br /> No kidding.
+            Build Beyond Boundaries <br /> No kidding.
           </span>
         }
         badge={
-          <a href="https://peerlist.io/manuarora">
+          <a href="#">
             <Badge className="h-10 w-10 -rotate-12 transform" />
           </a>
         }
-        src={`/linear.webp`}
+        src={team3Image}
         showGradient={false}
       />
     </div>

@@ -24,12 +24,12 @@ const About = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
-            What is <span className="text-primary">TYNET 3.0</span>?
+            About <span className="text-primary">TYNET 3.0</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            TYNET 3.0 is an exclusive women-only hackathon that brings together aspiring developers, 
-            designers, and innovators to build, learn, and compete. This year's LEGO theme celebrates 
-            the power of building something amazing, one brick at a time.
+            TYNET 3.0 is the third edition of our exclusive women-only hackathon, bringing together 
+            aspiring developers, designers, and innovators to build, learn, and compete. This year's 
+            LEGO theme celebrates the power of building something amazing, one brick at a time.
           </p>
         </div>
 

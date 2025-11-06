@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, Users } from "lucide-react";
-import heroImage from "@/assets/hero-lego.jpg";
+import heroImage from "@/assets/team3.jpg";
 
 const Hero = () => {
   return (
@@ -20,7 +20,7 @@ const Hero = () => {
             </h1>
             
             <p className="text-xl md:text-2xl text-foreground/80 font-medium max-w-lg">
-              Build Your Future, Brick by Brick 🧱
+              Build Beyond Boundaries, Brick by Brick 🧱
             </p>
 
             <div className="flex flex-wrap gap-4">

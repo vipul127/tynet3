@@ -42,7 +42,7 @@ const EventDetails = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-20">
           <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-4">
-            EVENT DETAILS
+            TYNET 3.0 EVENT DETAILS
           </h2>
           <div className="w-24 h-1 bg-foreground mx-auto"></div>
         </div>

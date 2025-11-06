@@ -39,10 +39,10 @@ const Team = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
-            Meet the <span className="text-primary">Core Team</span>
+            Meet the <span className="text-primary">W-ACM Cores</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            The amazing women behind TYNET 3.0, working hard to make this event unforgettable
+            The passionate women from ACM Women (W-ACM) organizing TYNET 3.0
           </p>
         </div>
 

@@ -1,4 +1,5 @@
 import { Instagram, Linkedin, Mail, Twitter } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -24,6 +25,7 @@ const Footer = () => {
               <li><a href="#details" className="text-muted-foreground hover:text-primary transition-colors">Event Details</a></li>
               <li><a href="#team" className="text-muted-foreground hover:text-primary transition-colors">Team</a></li>
               <li><a href="#prizes" className="text-muted-foreground hover:text-primary transition-colors">Prizes</a></li>
+              <li><Link to="/past-events" className="text-muted-foreground hover:text-primary transition-colors">Past Events</Link></li>
             </ul>
           </div>
 

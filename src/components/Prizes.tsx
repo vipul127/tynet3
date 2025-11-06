@@ -37,10 +37,10 @@ const Prizes = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
-            Prize <span className="text-accent">Pool</span>
+            TYNET 3.0 Prize <span className="text-accent">Pool</span>
           </h2>
           <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
-            Over $10,000 in prizes and opportunities for winners
+            Over $10,000 in prizes and opportunities for this year's winners
           </p>
         </div>
 
