@@ -4,19 +4,19 @@ import redLego from "@/assets/red.png";
 import greenLego from "@/assets/green.png";
 import brownLego from "@/assets/brown.png";
 import whiteLego from "@/assets/white.png";
-import legoMeals from "@/assets/lego-meals.png";
-import legoWorkshops from "@/assets/lego-workshops.png";
-import legoNetworking from "@/assets/lego-networking.png";
-import legoPrizes from "@/assets/lego-prizes.png";
-import legoSwag from "@/assets/lego-swag.png";
-import legoMentorship from "@/assets/lego-mentorship.png";
+import legoMeals from "@/assets/food.png";
+import legoWorkshops from "@/assets/grow.png";
+import legoNetworking from "@/assets/network.png";
+import legoPrizes from "@/assets/prize.png";
+import legoSwag from "@/assets/swag.png";
+import legoMentorship from "@/assets/mentor2.png";
 
 const EventDetails = () => {
   const highlights = [
-    { icon: Lightbulb, label: "Workshops", image: legoWorkshops, color: "bg-[#FFD93D]" },
     { icon: Coffee, label: "Free Meals", image: legoMeals, color: "bg-[#FF6B6B]" },
     { icon: UsersIcon, label: "Networking", image: legoNetworking, color: "bg-[#4ECDC4]" },
     { icon: Trophy, label: "Prizes", image: legoPrizes, color: "bg-[#FFD93D]" },
+    { icon: Lightbulb, label: "Learning & Growth", image: legoWorkshops, color: "bg-[#FFD93D]" },
     { icon: Award, label: "Swag", image: legoSwag, color: "bg-[#FF6B6B]" },
     { icon: Sparkles, label: "Mentorship", image: legoMentorship, color: "bg-[#4ECDC4]" },
   ];
@@ -148,14 +148,14 @@ const EventDetails = () => {
           transition={{ duration: 0.6 }}
         >
           <h3 className="text-5xl md:text-6xl font-bold text-center mb-16">WHAT TO EXPECT</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
             {highlights.map((item, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-background rounded-3xl p-8 lego-shadow hover:translate-y-[-8px] transition-all duration-300 relative overflow-hidden min-h-[280px] flex flex-col justify-between"
+                className="bg-background rounded-3xl p-8 lego-shadow hover:translate-y-[-8px] transition-all duration-300 relative overflow-hidden  min-w-[410px] aspect-[4/3] flex flex-col justify-between"
               >
                 {/* Icon at top */}
                 <div className="flex items-start gap-4 mb-4 relative z-10">
@@ -169,7 +169,7 @@ const EventDetails = () => {
                 <img 
                   src={item.image} 
                   alt={item.label}
-                  className="absolute bottom-0 right-0 w-32 h-32 md:w-36 md:h-36 object-contain opacity-60 pointer-events-none"
+                  className="absolute -bottom-0 right-3 w-[87%] h-[87%] md:w-64 md:h-64 object-contain pointer-events-none"
                 />
               </motion.div>
             ))}
