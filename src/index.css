@@ -128,4 +128,26 @@ All colors MUST be HSL.
     background-size: 40px 40px;
     background-position: 0 0, 20px 20px;
   }
+
+  /* Hide LEGO decorative elements below 1700px width, visible at 1701px+ */
+  /* Moving lego up and down slowly to create a floating effect */
+  .lego-decorative {
+    display: none;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @media (min-width: 1701px) {
+    .lego-decorative {
+      display: block;
+    }
+  }
 }

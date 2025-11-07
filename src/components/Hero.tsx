@@ -2,7 +2,10 @@ import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, Users } from "lucide-react";
 import heroImage from "@/assets/team3.jpg";
 import redLego from "@/assets/red.png";
+import brownLego from "@/assets/brown.png";
 import greenLego from "@/assets/green.png";
+import whiteLego from "@/assets/white.png";
+import { i } from "node_modules/framer-motion/dist/types.d-BJcRxCew";
 
 const Hero = () => {
   return (
@@ -74,26 +77,26 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Additional LEGO blocks scattered around */}
+      {/* Additional LEGO blocks scattered around - Hidden below 1800px */}
       <img 
         src={redLego} 
         alt="LEGO brick" 
-        className="absolute top-20 left-5 w-48 h-48 rotate-45 animate-pulse hidden lg:block opacity-40" 
+        className="absolute top-20 left-5 w-48 h-48 rotate-45 animate-pulse opacity-40 lego-decorative" 
+      />
+      <img 
+        src={whiteLego} 
+        alt="LEGO brick" 
+        className="absolute bottom-40 right-20 w-56 h-56 -rotate-45 animate-pulse opacity-30 lego-decorative" 
+      />
+      <img 
+        src={brownLego} 
+        alt="LEGO brick" 
+        className="absolute top-1/2 left-10 w-40 h-40 rotate-12 animate-pulse opacity-20 lego-decorative" 
       />
       <img 
         src={greenLego} 
         alt="LEGO brick" 
-        className="absolute bottom-40 right-20 w-56 h-56 -rotate-45 animate-pulse hidden xl:block opacity-30" 
-      />
-      <img 
-        src={redLego} 
-        alt="LEGO brick" 
-        className="absolute top-1/2 left-10 w-40 h-40 rotate-12 animate-pulse hidden xl:block opacity-20" 
-      />
-      <img 
-        src={greenLego} 
-        alt="LEGO brick" 
-        className="absolute top-1/3 right-5 w-52 h-52 -rotate-12 animate-pulse hidden lg:block opacity-25" 
+        className="absolute top-[20%] right-2 w-32 h-32 -rotate-12 animate-pulse opacity-25 lego-decorative" 
       />
 
       {/* Bottom Wave Divider */}

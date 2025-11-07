@@ -3,6 +3,7 @@ import redLego from "@/assets/red.png";
 import greenLego from "@/assets/green.png";
 import brownLego from "@/assets/brown.png";
 import whiteLego from "@/assets/white.png";
+import soloLego from "@/assets/solo.png";
 
 const About = () => {
   const features = [
@@ -25,31 +26,31 @@ const About = () => {
 
   return (
     <section id="about" className="py-20 bg-background relative overflow-hidden">
-      {/* LEGO blocks scattered around */}
+      {/* LEGO blocks scattered around - Hidden below 1800px */}
       <img 
         src={redLego} 
         alt="LEGO brick" 
-        className="absolute top-10 left-0 w-56 h-56 rotate-45 hidden lg:block opacity-20" 
+        className="absolute top-10 left-0 w-56 h-56 rotate-45 opacity-20 lego-decorative" 
       />
       <img 
         src={greenLego} 
         alt="LEGO brick" 
-        className="absolute top-40 right-0 w-64 h-64 -rotate-12 hidden xl:block opacity-15" 
+        className="absolute top-40 right-0 w-64 h-64 -rotate-12 opacity-15 lego-decorative" 
       />
       <img 
         src={brownLego} 
         alt="LEGO brick" 
-        className="absolute bottom-20 left-10 w-48 h-48 rotate-12 hidden lg:block opacity-25" 
+        className="absolute bottom-20 left-10 w-48 h-48 rotate-12 opacity-25 lego-decorative" 
       />
       <img 
         src={whiteLego} 
         alt="LEGO brick" 
-        className="absolute bottom-40 right-5 w-52 h-52 -rotate-45 hidden xl:block opacity-20" 
+        className="absolute bottom-40 right-5 w-52 h-52 -rotate-45 opacity-20 lego-decorative" 
       />
       <img 
         src={redLego} 
         alt="LEGO brick" 
-        className="absolute top-1/2 right-10 w-44 h-44 rotate-90 hidden lg:block opacity-15" 
+        className="absolute top-1/2 right-10 w-44 h-44 rotate-90 opacity-15 lego-decorative" 
       />
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -64,7 +65,8 @@ const About = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mt-12">
+        {/* Features Grid */}
+        <div className="grid md:grid-cols-3 gap-8 mt-12 mb-16">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
@@ -82,34 +84,47 @@ const About = () => {
           })}
         </div>
 
-        <div className="mt-16 bg-primary/10 border-4 border-primary/30 rounded-3xl p-10 brick-pattern">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3 className="text-3xl font-bold mb-4 text-foreground">By ACM Women</h3>
-              <p className="text-lg text-muted-foreground">
-                Organized by ACM Women, a student committee dedicated to empowering women in technology 
-                and creating an inclusive community for all. Join us in our mission to inspire, connect, 
-                and elevate women in computing.
-              </p>
+        {/* Redesigned ACM Women Section with LEGO Figure */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center bg-primary/10 border-4 border-primary/30 rounded-3xl p-8 md:p-12 brick-pattern relative overflow-visible">
+          {/* Left Side - Text Content */}
+          <div className="space-y-6 relative z-10">
+            <h3 className="text-4xl md:text-5xl font-bold text-foreground">
+              By <span className="text-primary">ACM Women</span>
+            </h3>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              Organized by ACM Women, a student committee dedicated to empowering women in technology 
+              and creating an inclusive community for all. Join us in our mission to inspire, connect, 
+              and elevate women in computing.
+            </p>
+            
+            {/* Stats in a horizontal row on mobile, 2x2 grid on larger screens */}
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-2 gap-4 pt-4">
+              <div className="bg-background rounded-xl p-4 md:p-6 lego-shadow-sm text-center">
+                <div className="text-3xl md:text-4xl font-bold text-primary">3rd</div>
+                <div className="text-xs md:text-sm text-muted-foreground mt-1 md:mt-2">Edition</div>
+              </div>
+              <div className="bg-background rounded-xl p-4 md:p-6 lego-shadow-sm text-center">
+                <div className="text-3xl md:text-4xl font-bold text-accent">48h</div>
+                <div className="text-xs md:text-sm text-muted-foreground mt-1 md:mt-2">Hacking Time</div>
+              </div>
+              <div className="bg-background rounded-xl p-4 md:p-6 lego-shadow-sm text-center">
+                <div className="text-3xl md:text-4xl font-bold text-primary">200+</div>
+                <div className="text-xs md:text-sm text-muted-foreground mt-1 md:mt-2">Participants</div>
+              </div>
+              <div className="bg-background rounded-xl p-4 md:p-6 lego-shadow-sm text-center">
+                <div className="text-3xl md:text-4xl font-bold text-accent">$10K</div>
+                <div className="text-xs md:text-sm text-muted-foreground mt-1 md:mt-2">Prize Pool</div>
+              </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-background rounded-xl p-6 lego-shadow-sm text-center">
-                <div className="text-4xl font-bold text-primary">3rd</div>
-                <div className="text-sm text-muted-foreground mt-2">Edition</div>
-              </div>
-              <div className="bg-background rounded-xl p-6 lego-shadow-sm text-center">
-                <div className="text-4xl font-bold text-accent">48h</div>
-                <div className="text-sm text-muted-foreground mt-2">Hacking Time</div>
-              </div>
-              <div className="bg-background rounded-xl p-6 lego-shadow-sm text-center">
-                <div className="text-4xl font-bold text-primary">200+</div>
-                <div className="text-sm text-muted-foreground mt-2">Participants</div>
-              </div>
-              <div className="bg-background rounded-xl p-6 lego-shadow-sm text-center">
-                <div className="text-4xl font-bold text-accent">$10K</div>
-                <div className="text-sm text-muted-foreground mt-2">Prize Pool</div>
-              </div>
-            </div>
+          </div>
+
+          {/* Right Side - LEGO Figure */}
+          <div className="relative flex items-end justify-center lg:justify-end h-full min-h-[300px] lg:min-h-[400px]">
+            <img 
+              src={soloLego} 
+              alt="LEGO Woman Figure" 
+              className="w-64 md:w-80 lg:w-96 h-auto object-contain relative z-0"
+            />
           </div>
         </div>
       </div>

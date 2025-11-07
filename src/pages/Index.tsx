@@ -4,6 +4,7 @@ import About from "@/components/About";
 import EventDetails from "@/components/EventDetails";
 import Team from "@/components/Team";
 import Prizes from "@/components/Prizes";
+import Timeline from "@/components/Timeline";
 import Footer from "@/components/Footer";
 import FloatingButton from "@/components/FloatingButton";
 import { Laptop } from "@/components/laptop";
@@ -15,6 +16,7 @@ import redLego from "@/assets/red.png";
 import greenLego from "@/assets/green.png";
 import brownLego from "@/assets/brown.png";
 import whiteLego from "@/assets/white.png";
+import tynet3Lego from "@/assets/tynet-3.0-lego.png";
 import FacultySection from "@/components/FacultySection";
 
 const Index = () => {
@@ -27,6 +29,14 @@ const Index = () => {
       
       {/* Past Events Teaser Section */}
       <section className="py-16 px-6 bg-muted/30 relative overflow-hidden">
+        {/* TYNET 3.0 LEGO Image */}
+        <div className="max-w-3xl mx-auto mb-12 flex justify-center">
+          <img 
+            src={tynet3Lego} 
+            alt="TYNET 3.0 LEGO" 
+            className="w-full max-w-md h-auto rounded-3xl lego-shadow"
+          />
+        </div>
         {/* LEGO blocks */}
         <img 
           src={brownLego} 
@@ -113,6 +123,7 @@ const Index = () => {
 
       {/* TYNET 3.0 Sections */}
       <EventDetails />
+      <Timeline />
       <Team />
       <Prizes />
       
