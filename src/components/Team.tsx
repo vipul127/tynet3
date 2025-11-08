@@ -12,46 +12,32 @@ import legoMentorship from "@/assets/lego-mentorship.png";
 const Team = () => {
   const coreTeam = [
     {
-      name: "Sarah Johnson",
-      role: "Event Lead",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah",
+      name: "Anu Iyer",
+      role: "Chairperson",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSng_fW_t5nm9hIiAU7PHa8XMq0dgAcU-wjEQ&s",
       accentColor: "accent",
       legoImage: legoWorkshops,
     },
     {
-      name: "Emily Chen",
-      role: "Tech Lead",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Emily",
+      name: "Arshiya Soni",
+      role: "Vice Chairperson",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSng_fW_t5nm9hIiAU7PHa8XMq0dgAcU-wjEQ&s",
       accentColor: "primary",
       legoImage: legoPrizes,
     },
     {
-      name: "Priya Sharma",
-      role: "Marketing Lead",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Priya",
+      name: "Winoliya Ponsingh",
+      role: "General Secretary",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSng_fW_t5nm9hIiAU7PHa8XMq0dgAcU-wjEQ&s",
       accentColor: "accent",
       legoImage: legoNetworking,
     },
     {
-      name: "Maria Garcia",
-      role: "Operations Lead",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Maria",
+      name: "Srushti Jadhav",
+      role: "Webmaster",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSng_fW_t5nm9hIiAU7PHa8XMq0dgAcU-wjEQ&s",
       accentColor: "primary",
       legoImage: legoMentorship,
-    },
-    {
-      name: "Jessica Lee",
-      role: "Sponsorship Lead",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Jessica",
-      accentColor: "accent",
-      legoImage: legoPrizes,
-    },
-    {
-      name: "Aisha Rahman",
-      role: "Design Lead",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Aisha",
-      accentColor: "primary",
-      legoImage: legoWorkshops,
     },
   ];
 

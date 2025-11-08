@@ -1,6 +1,6 @@
 import { Trophy, Award, Medal, Sparkles } from "lucide-react";
-import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { motion, useInView, useMotionValue, animate } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import redLego from "@/assets/red.png";
 import whiteLego from "@/assets/white.png";
 import brownLego from "@/assets/brown.png";
@@ -8,20 +8,22 @@ import greenLego from "@/assets/green.png";
 
 const CountingNumber = ({ value, duration = 2 }: { value: number; duration?: number }) => {
   const nodeRef = useRef<HTMLParagraphElement>(null);
-  const inView = useInView(nodeRef);
+  const inView = useInView(nodeRef, { once: true });
   const count = useMotionValue(0);
-  const rounded = useTransform(count, (latest) => Math.round(latest));
+  const [display, setDisplay] = useState(0);
 
   useEffect(() => {
-    if (inView) {
-      const controls = animate(count, value, { duration });
-      return controls.stop;
-    }
-  }, [count, value, duration, inView]);
+    if (!inView) return;
+    const controls = animate(count, value, {
+      duration,
+      onUpdate: (latest) => setDisplay(Math.round(latest)),
+    });
+    return () => controls.stop();
+  }, [count, duration, inView, value]);
 
   return (
     <motion.p ref={nodeRef} className="text-5xl md:text-6xl font-bold text-background mb-2">
-      ₹{rounded.get()}L
+      ₹{display}L
     </motion.p>
   );
 };
