@@ -5,8 +5,6 @@ import redLego from "@/assets/red.png";
 import brownLego from "@/assets/brown.png";
 import greenLego from "@/assets/green.png";
 import whiteLego from "@/assets/white.png";
-import { i } from "node_modules/framer-motion/dist/types.d-BJcRxCew";
-
 const Hero = () => {
   return (
     <section className="relative min-h-screen bg-primary brick-pattern overflow-hidden">
